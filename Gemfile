@@ -15,6 +15,7 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'shoulda'
 end
 
 gem 'jquery-rails'

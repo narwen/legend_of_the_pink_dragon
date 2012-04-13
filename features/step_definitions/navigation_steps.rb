@@ -1,11 +1,3 @@
-Given /^I am on the new account page$/ do
-  visit sign_up_path
-end
-
-Given /^I am on the login page$/ do
-  visit sign_in_path
-end
-
-Given /^I am on the home page$/ do
-  visit root_path
+Given /^(?:|I )am on (.+)$/ do |page_name|
+  visit path_to(page_name)
 end

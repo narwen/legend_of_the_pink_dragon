@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def create
     if user.save
-      session[:user_id] = user.id
+      auto_login(user)
       redirect_to(root_path, notice: "You have successfully registered.")
     else
       render :new
