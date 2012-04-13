@@ -36,7 +36,6 @@ Given /^(?:that|those) (.*) belongs? to that (.*)$/ do |children, parent|
 end
 
 Then /^I should see (\d+) ([^"]*) in the database$/ do |count, model_name|
-  binding.pry
   Fabrication::Cucumber::StepFabricator.new(model_name).klass.count.should == count.to_i
 end
 
