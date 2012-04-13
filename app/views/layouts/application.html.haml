@@ -10,6 +10,7 @@
       .slide-right
         - if current_user
           Welcome, #{current_user.username}
+          = link_to("Logout", sign_out_path)
     - if notice
       .flash-notice=notice
     - if alert

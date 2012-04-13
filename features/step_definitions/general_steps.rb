@@ -6,6 +6,10 @@ When /^I click "([^"]*)"$/ do |text|
   click_button text
 end
 
+When /^I click the link "([^"]*)"$/ do |link|
+  click_link link
+end
+
 Then /^I should see a ([a-zA-Z]+) of "([^"]*)"$/ do |flash_type, content|
   within(".flash-#{flash_type}") do
     page.should have_content(content)
