@@ -12,5 +12,7 @@
           Welcome, #{current_user.username}
     - if notice
       .flash-notice=notice
+    - if alert
+      .flash-alert=alert
     = yield
 
