@@ -1,0 +1,6 @@
+%h1 Create a new location
+
+= simple_form_for([:admin, location]) do |form|
+  = form.input :name
+  = form.input :description
+  = form.submit "Save"

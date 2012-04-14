@@ -2,6 +2,10 @@ When /^I fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in field, with: value
 end
 
+When /^I fill in "([^"]*)" with:$/ do |field, string|
+  fill_in field, with: string
+end
+
 When /^I click "([^"]*)"$/ do |text|
   click_button text
 end

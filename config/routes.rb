@@ -6,4 +6,8 @@ LegendOfThePinkDragon::Application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   root to: "welcome#index"
+
+  namespace :admin do
+    resources :locations, only: [:new, :create, :show]
+  end
 end
