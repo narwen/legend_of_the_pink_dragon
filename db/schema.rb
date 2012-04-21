@@ -11,11 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120414022021) do
+ActiveRecord::Schema.define(:version => 20120420162723) do
 
   create_table "locations", :force => true do |t|
-    t.string "name"
-    t.text   "description"
+    t.string  "name"
+    t.text    "description"
+    t.integer "north_id"
+    t.integer "south_id"
+    t.integer "east_id"
+    t.integer "west_id"
   end
 
   create_table "users", :force => true do |t|

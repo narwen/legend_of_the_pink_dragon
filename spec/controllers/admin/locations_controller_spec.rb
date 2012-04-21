@@ -22,13 +22,13 @@ describe Admin::LocationsController do
     it "Should not allow normal users" do
       user = Fabricate(:user)
       session[:user_id] = user.id
-      post :create, :location => {:name => "Test", :description => "Testing"}
+      post :create, :location => Fabricate.attributes_for(:location)
       subject.send(:location).should_not be_persisted
       subject.should respond_with(:redirect)
     end
 
     it "Should not allow normal users" do
-      post :create, :location => {:name => "Test", :description => "Testing"}
+      post :create, :location => Fabricate.attributes_for(:location)
       subject.send(:location).should_not be_persisted
       subject.should respond_with(:redirect)
     end

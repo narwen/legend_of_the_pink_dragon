@@ -9,5 +9,6 @@ LegendOfThePinkDragon::Application.routes.draw do
 
   namespace :admin do
     resources :locations, only: [:new, :create, :show]
+    match "/locations/:id/:direction/:other_location_id", to: "locations#link", as: "link_locations"
   end
 end

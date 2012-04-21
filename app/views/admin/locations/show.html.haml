@@ -1,6 +1,36 @@
 %p.field
   %p.label Name:
   %p.value= location.name
+
 %p.field
   %p.label Description:
   %p.value= location.description
+
+- if location.north
+  %p.field
+    %p.label To the north:
+    %p.value= location.north.name
+
+- if location.south
+  %p.field
+    %p.label To the south:
+    %p.value= location.south.name
+
+- if location.west
+  %p.field
+    %p.label To the west:
+    %p.value= location.west.name
+
+- if location.east
+  %p.field
+    %p.label To the east:
+    %p.value= location.east.name
+
+.unlinked_locations
+  - location.unlinked_locations.each do |unlinked_location|
+    %div{class: "unlinked_location_#{unlinked_location.id}"}
+      = link_to "North", admin_link_locations_path(location, :north, unlinked_location)
+      = link_to "South", admin_link_locations_path(location, :south, unlinked_location)
+      = link_to "East", admin_link_locations_path(location, :east, unlinked_location)
+      = link_to "West", admin_link_locations_path(location, :west, unlinked_location)
+      %p=unlinked_location.name

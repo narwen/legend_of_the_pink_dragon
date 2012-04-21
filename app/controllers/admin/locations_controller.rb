@@ -15,6 +15,14 @@ module Admin
       end
     end
 
+    def link
+      direction = params[:direction]
+      other_location = Location.find(params[:other_location_id])
+      location.send("#{direction}=", other_location)
+      location.save
+      redirect_to(admin_location_path(location))
+    end
+
     private
 
     def require_admin
