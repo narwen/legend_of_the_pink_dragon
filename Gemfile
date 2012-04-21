@@ -10,7 +10,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test do
+group :test, :development do
   gem 'cucumber-rails'
   gem 'rspec-rails'
   gem 'database_cleaner'
