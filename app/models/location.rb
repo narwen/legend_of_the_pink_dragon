@@ -15,40 +15,4 @@ class Location < ActiveRecord::Base
     end
     locations
   end
-
-  def north=(location)
-    write_attribute(:north_id, location.id)
-    if location.south == self
-      save
-    else
-      location.south = self
-    end
-  end
-
-  def south=(location)
-    write_attribute(:south_id, location.id)
-    if location.north == self
-      save
-    else
-      location.north = self
-    end
-  end
-
-  def west=(location)
-    write_attribute(:west_id, location.id)
-    if location.east == self
-      save
-    else
-      location.east = self
-    end
-  end
-
-  def east=(location)
-    write_attribute(:east_id, location.id)
-    if location.west == self
-      save
-    else
-      location.west = self
-    end
-  end
 end

@@ -18,8 +18,7 @@ module Admin
     def link
       direction = params[:direction]
       other_location = Location.find(params[:other_location_id])
-      location.send("#{direction}=", other_location)
-      location.save
+      LocationLinker.link_locations(location, other_location, direction)
       redirect_to(admin_location_path(location))
     end
 
