@@ -2,6 +2,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 
+gem 'decent_exposure'
+gem 'fabrication'
+gem 'faker'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'pry-rails'
+gem 'simple_form'
+gem 'sorcery'
 gem 'sqlite3'
 
 group :assets do
@@ -21,11 +29,3 @@ group :test, :development do
   gem 'shoulda'
 end
 
-gem 'jquery-rails'
-gem 'haml-rails'
-gem 'sorcery'
-gem 'simple_form'
-gem 'decent_exposure'
-gem 'pry-rails'
-gem 'fabrication'
-gem 'faker'
